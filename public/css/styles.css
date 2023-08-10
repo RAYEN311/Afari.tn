@@ -1,0 +1,150 @@
+:root{
+    --primary: white;
+    --second: black;
+    --bg_col:whitesmoke;
+    --dr_nv_cg_col : white;
+    --font_col: black;
+    --titles : rgb(72, 72, 72) ;
+    --scrool_col:rgb(155, 155, 155);
+    --box_shadow:rgb(210, 210, 210);
+
+
+    --scale-y: 1 ;
+
+
+    --main-height: calc(92vh * var(--scale-y));
+    --drawer-height: var(--main-height);
+    --nav-height:calc(calc(100vh * var(--scale-y)) - var(--main-height));
+    --top-nav : calc(calc(100vh * var(--scale-y)) - calc(var(--main-height) + var(--nav-height))) ;
+    --top-main : calc(calc(100vh * var(--scale-y)) - var(--main-height));
+    --top-drawer:var(--top-main); 
+
+    --preority-x: 1 ;
+
+    --nav-width: 100vw ;
+    --main-width-computer: calc(78vw * var(--preority-x));
+    --main-width-mobile: 100vw ;
+    --drawer-width-computer : calc(100vw - var(--main-width-computer));
+    --drawer-width-mobile : 100vw;
+    --main-left-computer: var(--drawer-width-computer);
+    --main-left-mobile: 0;
+    --drawer-left-computer : 0;
+    --drawer-left-mobile : -100vw;
+}
+
+*{
+      font-family: system-ui, Arial, sans-serif !important;
+      font-weight: 500;
+      /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+      text-transform: capitalize;
+  }
+  html , body{
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
+  .nav{
+      position: fixed;
+      height: var(--nav-height);
+      width: var(--nav-width);
+      top: var(--top-nav);
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--dr_nv_cg_col);
+      box-shadow: 0 1px 4px 1px var(--box_shadow);
+      z-index: 500;
+    }
+  .title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 21vw;        
+      text-transform: lowercase;
+      font-size: 4vh;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+   .title_img{
+        height: 5vh;
+        width:5vh;
+        margin:0;
+        padding:0;
+        margin-top:5px;
+    }
+    .drawer{
+        position: fixed;
+        height: var(--drawer-height);
+        width: var(--drawer-width-computer);
+        padding-left: 5px;
+        top: var(--top-drawer);
+        left: var(--drawer-left-computer);
+        overflow: hidden;
+        overflow-y: scroll;
+        background-color: var(--dr_nv_cg_col);
+        box-shadow: -1px 0 3px 3px var(--box_shadow);
+        z-index: 250;
+    }
+    #style-2::-webkit-scrollbar-track
+    {
+        /* -webkit-box-shadow: inset 0 0 6px rgba(126, 126, 126, 0.507); */
+        background-color: #F5F5F5;
+        z-index: 1000;
+    }
+    
+    #style-2::-webkit-scrollbar
+    {
+        width: 9px;
+        background-color: #F5F5F5;
+    }
+    
+    #style-2::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0); */
+        background-color: var(--scrool_col);
+    }
+    .settings{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1vh;
+        --spacing : calc(2vh + 10px);
+        width: calc(var(--drawer-width-computer) - var(--spacing));
+        background-color: var(--primary);
+    }
+    .filter{
+    padding: 1.5vh 0 1vh 0;
+    margin:0 1.5vh 0 1.5vh;
+    border-bottom: 1px solid var(--box_shadow);
+    }
+    .settings span , .filter span{
+        margin-top: 1vh;
+        font-size: 3.2vh;
+        color: var(--titles);
+    }
+    .sett_svg , .settings span , filter span{
+        height:5vh;
+        width: auto;
+        
+    }
+    .sett_svg {
+        fill:none;
+        stroke:#444;
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        stroke-width:32px;
+        margin-top: 3px;
+        cursor: pointer;
+        transition: transform 300ms;
+    }
+    .sett_svg:hover{
+        transform: rotate(150deg);
+    }
+    .main{
+      position: absolute;
+      height: var(--main-height);
+      width: var(--main-width-computer);
+      left: var(--main-left-computer);
+      top: var(--top-main);
+      background-color: var(--bg_col);
+  }
