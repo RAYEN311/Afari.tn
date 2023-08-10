@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/RAYEN311/Afari.tn/main/Shot.png" width="150" alt="Afari + Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/RAYEN311/Afari.tn/main/Shot.png" width="200" alt="Afari + Laravel Logo"></a></p>
 
 
 ## About Afari.tn (web)
