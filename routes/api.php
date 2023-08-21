@@ -3,6 +3,8 @@
 use App\Http\Controllers\afari_users_controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use laravel\sanctum\NewAccessToken ;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request){
-    return $request->user();
-});
+// Route::post('/tokens/create',[afari_users_controller::class, 'createToken']);
+
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request){
+//     return $request->user();
+// });
 
 
 
+Route::get('index', [afari_users_controller::class , 'index']);
 Route::post('login', [afari_users_controller::class , 'login']);
 Route::post('register', [afari_users_controller::class , 'register']);
+
+Route::get('{route}' , function(string $route){
+    return response()->json([
+        'message' => $route.' is invalide request'
+    ]);
+});
